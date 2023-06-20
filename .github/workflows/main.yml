@@ -8,6 +8,6 @@ jobs:
             with:
               fetch-depth: 100
           - name: test
-            sh: kosli version
+            run: kosli version
             
             
