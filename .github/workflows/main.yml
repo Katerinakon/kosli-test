@@ -18,5 +18,6 @@ jobs:
           - name: create kosli flow
             run: kosli create flow ${{ env.KOSLI_FLOW }} --template unit-test,snyk
             
-            
+          - name: report html
+            run: kosli report artifact index.html --artifact-type file
             
