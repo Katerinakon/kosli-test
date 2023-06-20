@@ -1,5 +1,11 @@
 name: build html
 on: push
+
+env: 
+  KOSLI_ORG: Katerina-test
+  KOSLI_FLOW: flow-test
+  KOSLI_API_TOKEN: ${{ secrets.KOSLIAPI }}
+
 jobs: 
     build: 
         runs-on: ubuntu-latest
@@ -9,7 +15,8 @@ jobs:
               fetch-depth: 100
           - name: Setup kosli cli
             uses: kosli-dev/setup-cli-action@v2
-          - name: test
-            run: kosli version
+          - name: create kosli flow
+            run: kosli create flow ${{ env.KOSLI_FLOW }} --template unit-test,snyk
+            
             
             
