@@ -20,4 +20,6 @@ jobs:
             
           - name: report html
             run: kosli report artifact index.html --artifact-type file
+          - name: report unit test
+            run: kosli report evidence artifact generic index.html --artifact-type file --name unit-test
             
